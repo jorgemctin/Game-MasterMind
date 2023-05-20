@@ -8,3 +8,32 @@
     height: 10em;
 }
 
+.headercolors{
+    margin-top: 10em;
+
+}
+
+.contenedor {
+
+    display: inline-block;
+    background-color: rgb(20, 20, 20);
+
+    height: 1.5em;
+    width: 1.5em;
+
+    transition: 0.2s;
+    margin: 0.2em;
+    cursor: pointer;
+
+}
+
+.cercle {
+
+    transition: 0.2s;
+    border-radius: 50%;
+
+}
+
+.color2 {
+    background-color: rgb(20, 20, 20);
+}

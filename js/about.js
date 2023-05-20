@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
     player.innerHTML = storedUserName;
 });
 
+
+//No funciona
+
 document.addEventListener("DOMContentLoaded", function() {
 
     let storeLevelBeginner = localStorage.getItem("userName");
