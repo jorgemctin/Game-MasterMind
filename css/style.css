@@ -5,11 +5,21 @@
 }
 
 .top{
-    height: 7em;
+    height: 1em;
 }
 
 .headercolors{
-    margin-top: 7em;
+    margin-top: 5.3em;
+}
+
+.bordercolor1{
+    height: 8em;
+    width: 33em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.386);
+    border-radius: 2em;
 }
 
 .colorpicker {
