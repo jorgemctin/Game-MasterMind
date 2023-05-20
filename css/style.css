@@ -5,43 +5,7 @@
 }
 
 .top{
-    height: 1em;
+    height: 12em;
 }
 
-.headercolors{
-    margin-top: 5.3em;
-}
-
-.bordercolor1{
-    height: 8em;
-    width: 33em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 255, 255, 0.386);
-    border-radius: 2em;
-}
-
-.colorpicker {
-    display: inline-block;
-    height: 1.6em;
-    width: 3em;
-    margin: 1em;
-    cursor: pointer;
-}
-
-/* .cercle {
-    transition: 0.2s;
-    border-radius: 50%;
-    cursor: pointer;
-} */
-.colorSelected {
-
-    display: inline-block;
-    background-color: rgb(20, 20, 20);
-    height: 1.6em;
-    width: 3em;
-    margin: 1em;
-    cursor: pointer;
-}
 
