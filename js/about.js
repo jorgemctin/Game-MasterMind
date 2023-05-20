@@ -17,5 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
     player.innerHTML = storedUserName;
 });
 
-let level = document.getElementById("levelBeginner");
+document.addEventListener("DOMContentLoaded", function() {
 
+    let storeLevelBeginner = localStorage.getItem("userName");
+    console.log(storeLevelBeginner);
+
+    let player = document.getElementById("user1");
+    player.innerHTML = storeLevelBeginner;
+});

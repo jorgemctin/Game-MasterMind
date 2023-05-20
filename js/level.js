@@ -1,20 +1,65 @@
 
 
-document.addEventListener("DOMContentLoaded", function(){
+// Intento 1:
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Array de niveles
+//     const levels = [
+//         { value: "beginner", label: "Principiante" },
+//         { value: "intermediate", label: "Intermedio" },
+//         { value: "advanced", label: "Avanzado" }
+//     ];
 
-    let levelSelected = document.getElementById("levelSelector");
+//     let levelSelector = document.getElementById("levelSelector");
 
+//   // Generar los elementos del selector utilizando map
+//   levelSelector.innerHTML = levels.map(level => {
+//     return `<option value="${level.value}">${level.label}</option>`;
+//   }).join("");
 
-    const storeLevel = () => {
-        selectedValue = document.getElementById("levelSelector").value;
+//   // Evento de cambio del selector
+//   levelSelector.addEventListener("change", function(event) {
+//     let selectedValue = event.target.value;
+//     localStorage.setItem("selectedValue", selectedValue);
+//     alert("levelSelected: " + selectedValue);
+//     console.log(selectedValue);
+//   });
+// });
+
+// Intento 2:
+document.addEventListener("DOMContentLoaded", function() {
+    let levelSelected = document.getElementById("beginner");
+    
+    const storeLevelBeginner = () => {
+        let selectedValue = levelSelected.value;
         localStorage.setItem("selectedValue", selectedValue);
-        alert("levelSelected: " + selectedValue)
-        console.log(selectedValue)
-    }
+        alert("beginner: " + selectedValue);
+        console.log(selectedValue);
+    };
 
-    console.log(levelSelected)
-
+    levelSelected.addEventListener("change", storeLevelBeginner);
 });
+
+
+// let levelSelected = document.getElementById("beginner");
+
+
+
+// Intento 3:
+// document.addEventListener("DOMContentLoaded", function(){
+
+//     let levelSelected1 = document.getElementById("beginner");
+
+
+//     const storeLevelBeginner = () => {
+//         selectedValue1 = document.getElementById("beginner").value;
+//         localStorage.setItem("selectedValue", selectedValue1);
+//         alert("beginner: " + selectedValue1)
+//         console.log(selectedValue1)
+//     }
+
+//     levelSelected.addEventListener("change", storeLevelBeginner);
+
+// });
 
 
 // document.addEventListener("DOMContentLoaded", function() {

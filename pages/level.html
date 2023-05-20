@@ -49,20 +49,21 @@
                 <div class="card-body">
                     <h3 class="card-title text-center">SELECCIONA EL NIVEL</h3>
                     <p class="card-text text-center">
-                        <div class="list-group" id="nivelSelector">
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" value="beginner">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="beginner" onClick="storeLevelBeginner()">
                                 Principiante
                             </button>
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" value="intermediate">
+                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="intermediate">
                                 Medio
                             </button>
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" value="advanced">
+                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="advanced">
                                 Avanzado
                             </button>
                         </div>
 
                             <div class="d-grid mt-4 d-flex justify-content-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-success" href=""><button class="btn btn-light btn btn-outline-success" type="button" onClick="storeLevel()">ACEPTAR</button></a>
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-success" href="">
+                                    <button class="btn btn-light btn btn-outline-success" type="button">ACEPTAR</button></a>
                             </div>
                         </div>
                     </div>
