@@ -48,3 +48,14 @@
 /* .color2 {
     background-color: rgb(20, 20, 20);
 } */
+
+.colorSelected {
+
+    display: inline-block;
+    background-color: rgb(20, 20, 20);
+    height: 2em;
+    width: 2em;
+    margin: 0.4em;
+    cursor: pointer;
+    border-radius: 50%;
+}
