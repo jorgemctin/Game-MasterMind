@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+        <!-- NAVBAR -->
+<div class="container1">
     <div class="container">
         <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(9, 23, 91, 0.641);">
             <div class="container-fluid d-flex justify-content-start gap-1">
@@ -40,53 +42,38 @@
         </nav>  
 
 
-    <div class="top"></div>
-
-    <div class="container-fluid d-flex justify-content-around">
-        <div class="row">
-            <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title text-center">SELECCIONA EL NIVEL</h3>
-                    <p class="card-text text-center">
-                        <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="beginner" onClick="storeLevelBeginner()">
-                                Principiante
-                            </button>
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="intermediate">
-                                Medio
-                            </button>
-                            <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="advanced">
-                                Avanzado
-                            </button>
-                        </div>
-
-                            <div class="d-grid mt-4 d-flex justify-content-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-success" href="../pages/colors.html">
-                                    <button class="btn btn-light btn btn-outline-success" type="button">ACEPTAR</button></a>
+        <!-- LEVEL PICKER -->
+        <div class="top"></div>
+            <div class="container-fluid d-flex justify-content-around">          
+                <div class="card border-warning" style="background-color:#1a155fb0;">
+                    <div class="card-body" >
+                        <h3 class="card-title text-center">SELECCIONA EL NIVEL</h3>
+                            <p class="card-text text-center">
+                                <div class="list-group">
+                                    <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="beginner" onClick="storeLevelBeginner()">
+                                        Principiante
+                                    </button>
+                                    <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="intermediate">
+                                        Medio
+                                    </button>
+                                    <button type="button" class="list-group-item list-group-item-action text-center" aria-current="true" id="advanced">
+                                        Avanzado
+                                    </button>
+                                </div>
+                                <div class="d-grid mt-4 d-flex justify-content-center">
+                                    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-success" href="../pages/colors.html">
+                                        <div class="dropdown btn btn-outline-secondary">
+                                            <button class="btn btn-outline-warning text-light fs-5" style="background-color:#1a155fb0;" type="button">ACEPTAR</button></a>
+                                </div></div>
                             </div>
-                        </div>
+                        </div>               
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    
 
 
 
-
-
-
-
-
-
-
-
-
-
-    </div>
 
     <script src="../js/level.js"></script>
     <script src="../js/about.js"></script>
