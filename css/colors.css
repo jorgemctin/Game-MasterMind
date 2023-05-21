@@ -4,19 +4,15 @@
 }
 
 .container1{
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
     background-color: rgba(108, 108, 223, 0.274);
 }
-
-
 
 .topcolor{
     height: 8em;
 }
 
 .bordercolor1{
-  
     width: 33em;
     display: flex;
     justify-content: center;
@@ -33,11 +29,6 @@
     cursor: pointer;
 }
 
-/* .cercle {
-    transition: 0.2s;
-    border-radius: 50%;
-    cursor: pointer;
-} */
 .colorSelected {
 
     display: inline-block;
