@@ -1,11 +1,17 @@
 .head {
     height:10em;
-   
-
 }
 
 .top{
     height: 9em;
+}
+.container1{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(154, 154, 161, 0.274);
+}
+.pic{
+    
 }
 
 
