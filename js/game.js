@@ -82,3 +82,25 @@ let game10 = document.getElementById("gameline10");
         game10.appendChild(bolaElement);
     }
 
+
+
+    const changeBallColors = () => {
+        const gameContainer = document.getElementById("gameline1");
+        const balls = Array.from({ length: 6 }, (_, index) => index);
+        const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+      
+        balls.map((_, index) => {
+          const bolaElement = document.createElement("div");
+          bolaElement.classList.add(`bola-${index}`);
+      
+          bolaElement.addEventListener("click", () => {
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            bolaElement.style.backgroundColor = randomColor;
+          });
+      
+          gameContainer.appendChild(bolaElement);
+
+        });
+      };
+    

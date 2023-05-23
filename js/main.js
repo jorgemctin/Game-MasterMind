@@ -15,6 +15,8 @@ if (arrayColor.length === arrayColor1.length) {
         elementoDentroDelArray.addEventListener("input", (event) => {
             const colorSelector = event.target.value;
             arrayColor1[i].style.backgroundColor = colorSelector;
+
+            localStorage.setItem(`color-${i}`, colorSelector);
         });
     });
 } else {
@@ -24,7 +26,16 @@ if (arrayColor.length === arrayColor1.length) {
 
 
 
+const storedColors = JSON.parse(localStorage.getItem("color"));
 
+
+if (storedColors && storedColors.length === arrayColor1.length) {
+  arrayColor1.forEach((colorElement, i) => {
+    colorElement.style.backgroundColor = storedColors[i];
+  });
+} else {
+  console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
+}
 
 
 
