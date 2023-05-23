@@ -4,19 +4,7 @@
     background-color: rgba(108, 108, 223, 0.274);
 }
 .top{
-
     height: 5em;
-}
-.gameline1, .gameline2, .gameline3, .gameline4 {
-
-    display: inline-block;
-    height: 1.7em;
-    width: 1.7em;
-    justify-content: center;
-    background-color: rgb(20, 20, 20);
-    border-radius: 50%;
-    margin: 0.7em;
-
 }
 
 .checking {
@@ -27,11 +15,9 @@
     border-radius: 50%;
     margin-left:0.7em;
     margin: 0.7em;
-    
 }
 
 .colorSelected {
-
     display: inline-block;
     background-color: rgb(20, 20, 20);
     height: 2em;
@@ -39,4 +25,17 @@
     margin: 0.4em;
     cursor: pointer;
     border-radius: 50%;
+}
+
+.gameline1, .gameline2, .gameline3, .gameline4,.gameline5, .gameline6, .gameline7, .gameline8, .gameline9, .gameline10 {
+    display: inline-block;
+    height: 1.7em;
+    width: 1.7em;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    border-radius: 50%;
+    margin: 0.7em;
+}
+.color{
+    background-color: blue;
 }
