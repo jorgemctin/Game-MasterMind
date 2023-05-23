@@ -25,6 +25,15 @@
 //   });
 // });
 
+
+
+//PRIMERO EL IF PARA LOS 3 NIVELES, LUEGO UN ADD EVENT LISTENER PARA EL BOTON ACEPTAR Y QUE SE GUARDE EN LA NUBE
+
+
+//FUNCIONES QUE NECESITO:
+//PINTAR LAS BOLAS CON EL CLICK.
+//COMPROBAR EL INTENTO GANADOR COMPARANDO CON LA COMBINACIÓN SECRETA!!
+
 // Intento 2:
 document.addEventListener("DOMContentLoaded", function() {
     let levelSelected = document.getElementById("beginner");
