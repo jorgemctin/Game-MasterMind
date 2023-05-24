@@ -1,31 +1,37 @@
 
-let game1 = document.getElementById("gameline1");
+// let game1 = document.getElementById("gameline1");
 
-for(let i = 0; i < 6; i++) {
-    let bolaElement = document.createElement('div')
-    bolaElement.classList.add("gameline1");
-    bolaElement.id = `bola-${i}`
-    game1.appendChild(bolaElement)
-    }
+// for(let i = 0; i < 6; i++) {
+//     let bolaElement = document.createElement('div')
+//     bolaElement.classList.add("gameline1");
+//     bolaElement.id = `bola-${i}`
+//     game1.appendChild(bolaElement)
+//     }
 
-let game2 = document.getElementById("gameline2");
+// let game2 = document.getElementById("gameline2");
 
-    for(let i = 0; i < 6; i++) {
-        let bolaElement = document.createElement('div')
-        bolaElement.classList.add("gameline2");
-        bolaElement.id = `bola-${i}`
-        game2.appendChild(bolaElement)
-    }
+//     for(let i = 0; i < 6; i++) {
+//         let bolaElement = document.createElement('div')
+//         bolaElement.classList.add("gameline2");
+//         bolaElement.id = `bola-${i}`
+//         game2.appendChild(bolaElement)
+//     }
 
-let game3 = document.getElementById("gameline3");
+let linegame = document.getElementById("linegame");
 
     for(let i = 0; i < 6; i++) {
         let bolaElement = document.createElement('div');
-        bolaElement.classList.add("gameline3");
+        bolaElement.classList.add("linegame");
         bolaElement.id = `bola-${i}`;
-        game3.appendChild(bolaElement);
+        linegame.appendChild(bolaElement);
     }
 
+
+
+
+
+
+    
 let game4 = document.getElementById("gameline4");
     for(let i = 0; i < 6; i++) {
         let bolaElement = document.createElement('div');
@@ -83,6 +89,49 @@ let game10 = document.getElementById("gameline10");
     };
 
 
+//BRINGING COLORS SELECTED:
+    // let colorSelected = document.getElementById("colorSelected");
+    // for(let i = 0; i < 6; i++) {
+    //     let bolaElement = document.createElement('div');
+    //     bolaElement.classList.add("colorSelected");
+    //     bolaElement.id = `bola-${i}`;
+    //     colorSelected.appendChild(bolaElement);
+    // };
+
+    // const storedColors = JSON.parse(localStorage.getItem("selectedColors"));
+
+
+
+    // if (storedColors && storedColors.length === arrayColor.length) {
+    //     arrayColor1.forEach((colorElement, i) => {
+    //     colorElement.style.backgroundColor = storedColors[i];
+    //     });
+    // } else {
+    //     console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
+    // }
+
+
+    const storedColors = JSON.parse(localStorage.getItem("selectedColors"));
+    let arrayColor = document.getElementsByClassName("colorpicker");
+    let arrayColor1 = document.getElementsByClassName("colorSelected");
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (storedColors && storedColors.length === colors.length) {
+            colorInputs.forEach((colorElement, i) => {
+                colorElement.style.backgroundColor = storedColors[i];
+            });
+        } else {
+            console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
+        }
+
+    
+    });
+
+
+
+
 
 //BRINGING COLORS SELECTED:
 
@@ -129,17 +178,21 @@ let game10 = document.getElementById("gameline10");
 //     console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
 // }
 
-function cargarColoresDesdeLocalStorage() {
-    const storedColors = JSON.parse(localStorage.getItem("color"));
-    if (storedColors && storedColors.length === 6) { // Reemplaza "7" con la longitud adecuada de los colores
-      const colorSelectedElements = document.getElementsByClassName("colorSelected");
-      Array.from(colorSelectedElements).forEach((element, i) => {
-        element.style.backgroundColor = storedColors[i];
-      });
-    } else {
-      console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
-    }
-  }
+
+
+
+
+// function cargarColoresDesdeLocalStorage() {
+//     const storedColors = JSON.parse(localStorage.getItem("color"));
+//     if (storedColors && storedColors.length === 6) { // Reemplaza "7" con la longitud adecuada de los colores
+//       const colorSelectedElements = document.getElementsByClassName("colorSelected");
+//       Array.from(colorSelectedElements).forEach((element, i) => {
+//         element.style.backgroundColor = storedColors[i];
+//       });
+//     } else {
+//       console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
+//     }
+//   }
 
 
     // objetoGuardado = localStorage.getItem('clave');
@@ -169,9 +222,62 @@ function cargarColoresDesdeLocalStorage() {
 
 
 
+    let tablero = document.getElementById('tablero');
 
+    let dificultad = 6;
+    let contador = 1;
+    
+    
+    
+    const compruebaGanadora =() =>{
+    
+    }
+    
+    const pintaBola = (numeroDeFila)=> {
+    
+        console.timeLog("Has pintado la bola", numeroDeFila)
+    
+    }
+    
+    
+        //     const pintaTablero = () => {
+        //     compruebaGanadora();
+          
+        //     //Al no haber ganado nadie, el código continúa por aquí debajo...
+          
+        //     if (dificultad > 1) {
+        //       document.getElementById(`fila${contador}`).removeAttribute("onclick");
+          
+        //       contador++;
+          
+        //       tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'>${contador}</div>`;
+          
+        //       dificultad -= 1;
+        //     } else {
+        //       console.log("you died!");
+        //     }
+        //   };
 
+         
+          const pintaTablero = () => {
+            compruebaGanadora();
+          
+            // Al no haber ganado nadie, el código continúa por aquí debajo...
+          
+            if (dificultad > 1) {
+              document.getElementById(`fila${contador}`).removeAttribute("onclick");
+          
+              contador++;
+          
+              tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'>${contador}</div>`;
+          
+              dificultad -= 1;
+            } else {
+              console.log("you died!");
+            }
+          };
 
+  
 
 
 
@@ -192,60 +298,46 @@ function cargarColoresDesdeLocalStorage() {
     
 
 
-    // TABLERO 
-
-let tablero = document.getElementById('tablero');
-
-let dificultad = 5;
-let contador = 1;
 
 
 
-const compruebaGanadora =() =>{
-
-}
-
-const pintaBola = (numeroDeFila)=> {
-
-    console.timeLog("Has pintado la bola", numeroDeFila)
-
-}
-
-    const pintaTablero = () => {
-        // let dificultad = 5;
-        //ESTA PARTE ACABA DE SER HARDCODEADA
 
 
-        compruebaGanadora();
+    // const pintaTablero = () => {
+    //     // let dificultad = 5;
+    //     //ESTA PARTE ACABA DE SER HARDCODEADA
+    //     compruebaGanadora();
+    //     //Al no haber ganado nadie, el código continua por aquí debajo.
 
-        //Al no haber ganado nadie, el código continua por aquí debajo.
+    //     if(dificultad > 1){
 
-        if(dificultad > 1){
-
-            //OCULTAR:
-            // let filaAnterior = document.getElementById(`fila${dificultad}`);
+    //         //OCULTAR:
+    //         // let filaAnterior = document.getElementById(`fila${dificultad}`);
 
 
 
-            document.getElementById(`fila${contador}`).removeAttribute('click', (e) =>{
-                e.preventDefault();
-            }
-            );
-            contador++;
+    //         document.getElementById(`fila${contador}`).removeAttribute('click', (e) =>{
+    //             e.preventDefault();
+    //         }
+    //         );
+    //         contador++;
+
+    //         tablero.innerHTML += `<div id="fila${contador} class='fila' onclick='pintaBola(${contador+1})'>${dificultad}</div>`; 
+
+    //         dificultad -= 1;
+
+    //         console.log(innerHTML);
+
+    //     }else{
+    //         console.log('your died');
+    //     }
+    // }
 
 
-            tablero.innerHTML += `<div id="fila${contador} class='fila' onclick='pintaBola(${contador+1})'>${dificultad}</div>`; 
 
-            dificultad -= 1;
-
-            console.log(innerHTML);
-
-        }else{
-            console.log('your died');
-        }
-    }
-
-
-
+        
 
     //colors, comb secre, pintar un color, comprobar ganacias
+
+
+    

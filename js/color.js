@@ -14,12 +14,14 @@ colorInputs.forEach(input => {
     });
 });
 
-const storedColors = JSON.parse(localStorage.getItem("selectedColors-"));
+
+
+const storedColors = JSON.parse(localStorage.getItem("selectedColors"));
 
 
 
 if (storedColors && storedColors.length === arrayColor.length) {
-    arrayColor1.forEach((colorElement, i) => {
+    colorSelected.forEach((colorElement, i) => {
     colorElement.style.backgroundColor = storedColors[i];
     });
 } else {
