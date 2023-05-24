@@ -1,3 +1,13 @@
+let selectedLevelValue = 'beginner';
+
+const selectLevel = (level) => {
+    console.log("selectLevel", level);
+    selectedLevelValue = level;
+}
+
+const goToColorPicker = () => {
+    localStorage.setItem("selectLevel", selectedLevelValue);
+}
 
 
 // Intento 1:
@@ -35,18 +45,19 @@
 //COMPROBAR EL INTENTO GANADOR COMPARANDO CON LA COMBINACIÓN SECRETA!!
 
 // Intento 2:
-document.addEventListener("DOMContentLoaded", function() {
-    let levelSelected = document.getElementById("beginner");
-    
-    const storeLevelBeginner = () => {
-        let selectedValue = levelSelected.value;
-        localStorage.setItem("selectedValue", selectedValue);
-        alert("beginner: " + selectedValue);
-        console.log(selectedValue);
-    };
+// document.addEventListener("DOMContentLoaded", function() {
 
-    levelSelected.addEventListener("change", storeLevelBeginner);
-});
+//     let levelSelected = document.getElementById("beginner");
+    
+//     const storeLevelBeginner = () => {
+//         let selectedValue = levelSelected.value;
+//         localStorage.setItem("selectedValue", selectedValue);
+//         alert("beginner: " + selectedValue);
+//         console.log(selectedValue);
+//     };
+
+//     levelSelected.addEventListener("change", storeLevelBeginner);
+// });
 
 
 // let levelSelected = document.getElementById("beginner");
