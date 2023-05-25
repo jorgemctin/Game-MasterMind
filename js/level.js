@@ -1,14 +1,3 @@
-let selectedLevelValue = 'beginner';
-
-const selectLevel = (level) => {
-    console.log("selectLevel", level);
-    selectedLevelValue = level;
-}
-
-const goToColorPicker = () => {
-    localStorage.setItem("selectLevel", selectedLevelValue);
-}
-
 
 // Intento 1:
 // document.addEventListener("DOMContentLoaded", function() {
@@ -126,3 +115,16 @@ const goToColorPicker = () => {
     // const storeLevelAdvanced = () =>
     //     localStorage.setItem("levelAdvanced", document.getElementById("advanced").value);
     //     console.log(localStorage.getItem("levelAdvanced"));
+
+
+
+    let selectedLevelValue = 'beginner';
+
+const selectLevel = (level) => {
+    console.log("selectLevel", level);
+    selectedLevelValue = level;
+}
+
+const goToColorPicker = () => {
+    localStorage.setItem("selectLevel", selectedLevelValue);
+}

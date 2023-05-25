@@ -33,11 +33,10 @@ const makeSecretCombination = () => {
 
     let posibleColors = storedColors;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0;i < 4; i++) {
 
         let positionRandom = Math.floor(Math.random() * posibleColors.length);
         secretCombination.push(posibleColors[positionRandom]);
-
     }
 };
 
@@ -59,28 +58,28 @@ secretCombinationElementsArray.map((secretColor, index) => {
 
 
 
-//Crear variable combinaciónUsuario
+// //Crear variable combinaciónUsuario
 
-let comprobar = document.getElementById('');
-
-
-//COMPROBAR GANADOR:
-
-if (secretCombination.join("") === combinacionUsuario.join("")){
-// pasar al HTML ganador
-
-}
+// let comprobar = document.getElementById('');
 
 
-if (i=0, i<4, i++){
-    if (secretCombination[i] === combinaciónUsuario[i]) {
-        puntitoComprobación[i].style.backgroundColor = '#000fg'; red
+// //COMPROBAR GANADOR:
 
-    }if (secretCombination.includes(combinacionUsuario[i])) {
-        puntitoComprobación.style.backgroundColor = '#000fg';white
-    }
+// if (secretCombination.join("") === combinacionUsuario.join("")){
+// // pasar al HTML ganador
 
-}
+// }
+
+
+// if (i=0, i<4, i++){
+//     if (secretCombination[i] === combinaciónUsuario[i]) {
+//         puntitoComprobación[i].style.backgroundColor = '#000fg'; red
+
+//     }if (secretCombination.includes(combinacionUsuario[i])) {
+//         puntitoComprobación.style.backgroundColor = '#000fg';white
+//     }
+
+// }
 
 
 
