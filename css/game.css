@@ -56,9 +56,9 @@
     border-radius: 50%;
     margin: 0.7em;
 }
-.color{
+/* .color{
     background-color: blue;
-}
+} */
 
 
 .linegame{
@@ -81,10 +81,8 @@ tablero */
 .fila{
     height: 3em;
     /* background-color: aqua; */
-
     border-radius: 1em;
     margin: 0.5em;
-
 }
 #check{
     height: 2em;

@@ -23,7 +23,7 @@
 assignColorsToElements();
 
 
-
+//MAKE THE SECRET COMBINATION:
 
 let secretCombination = [];
 
@@ -42,7 +42,8 @@ const makeSecretCombination = () => {
 };
 
 makeSecretCombination();
-// console.log(secretCombination)
+
+//SAVE THE COLORS IN THE RIGHT PLACE:
 
 
 let secretCombinationElements = document.querySelectorAll('.secretCombination');    
@@ -53,18 +54,48 @@ secretCombinationElementsArray.map((secretColor, index) => {
 })
 
 
-// const assignSecretCombination = () => {
-//     const secretCombination = document.getElementsByClassName("secretCombination");
-//     const storedColors = makeSecretCombination();
-    
-//     // Asignar los colores a los elementos
-//     Array.from(colorSelectedElements).forEach((element, index) => {
-//         if (storedColors[index]) {
-//             element.style.backgroundColor = storedColors[index];
-//         }
-//     });
-// };
 
+
+
+
+
+//Crear variable combinaciónUsuario
+
+let comprobar = document.getElementById('');
+
+
+//COMPROBAR GANADOR:
+
+if (secretCombination.join("") === combinacionUsuario.join("")){
+// pasar al HTML ganador
+
+}
+
+
+if (i=0, i<4, i++){
+    if (secretCombination[i] === combinaciónUsuario[i]) {
+        puntitoComprobación[i].style.backgroundColor = '#000fg'; red
+
+    }if (secretCombination.includes(combinacionUsuario[i])) {
+        puntitoComprobación.style.backgroundColor = '#000fg';white
+    }
+
+}
+
+
+
+
+
+
+
+// let colorSelected1 = document.getElementById("colorSelected");
+
+// for(let i = 0; i < 6; i++) {
+//     let bolaElement = document.createElement('div')
+//     bolaElement.classList.add("colorSelected");
+//     bolaElement.id = `bola-${i}`
+//     colorSelected1.appendChild(bolaElement)
+//     }
 
 
 
