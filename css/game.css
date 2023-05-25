@@ -28,13 +28,23 @@
     margin: 0.7em;
 }
 
-.colorSelected, .secretCombination {
+.secretCombination {
     display: inline-block;
     background-color: rgb(20, 20, 20);
     height: 2em;
     width: 2em;
     margin: 0.4em;
     cursor: pointer;
+    border-radius: 50%;
+}
+
+.colorSelected{
+    display: inline-block;
+
+    height: 2em;
+    width: 2em;
+    margin: 0.4em;
+   
     border-radius: 50%;
 }
 
@@ -54,8 +64,8 @@
 
 .linegame{
     display: inline-block;
-    height: 2.3em;
-    width: 2.3em;
+    height: 2em;
+    width: 2em;
     justify-content: center;
     background-color: rgb(20, 20, 20);
     border-radius: 50%;

@@ -1,32 +1,39 @@
-const colors = ['#41EC74','#351FE0','#E6A3A3','#8ADFF4','#E81717','#EE53D2'];
+const colors = ['#41EC74', '#351FE0', '#E6A3A3', '#8ADFF4', '#E81717', '#EE53D2'];
 
 const storeColors = () => {
-    localStorage.setItem("selectedColors", JSON.stringify(colors));
-}
-storeColors(); 
+  const selectedColors = [];
+  colorInputs.forEach(input => {
+    selectedColors.push(input.value);
+  });
+  localStorage.setItem("selectedColors", JSON.stringify(selectedColors));
+};
 
 const colorInputs = document.querySelectorAll("input[type='color']");
 
 
+
 colorInputs.forEach(input => {
-    input.addEventListener("change", (event) => {
-        console.log("input", event.target.value, event.target.id);
-    });
+  input.addEventListener("change", (event) => {
+    console.log("input", event.target.value, event.target.id);
+    storeColors();
+  });
 });
 
 
 
-const storedColors = JSON.parse(localStorage.getItem("selectedColors"));
+
+
+// const storedColors = JSON.parse(localStorage.getItem("selectedColors"));
 
 
 
-if (storedColors && storedColors.length === arrayColor.length) {
-    colorSelected.forEach((colorElement, i) => {
-    colorElement.style.backgroundColor = storedColors[i];
-    });
-} else {
-    console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
-}
+// if (storedColors && storedColors.length === arrayColor.length) {
+//     colorSelected.forEach((colorElement, i) => {
+//     colorElement.style.backgroundColor = storedColors[i];
+//     });
+// } else {
+//     console.log("No se encontraron colores almacenados o la cantidad de colores no coincide.");
+// }
 
 
 

@@ -1,4 +1,37 @@
 
+
+    const getStoredColors = () => {
+    const storedColors = localStorage.getItem("selectedColors");
+    
+    if (storedColors) {
+        return JSON.parse(storedColors);
+    } else {
+        return [];
+    }
+};
+
+    const assignColorsToElements = () => {
+    const colorSelectedElements = document.getElementsByClassName("colorSelected");
+    const storedColors = getStoredColors();
+    
+    // Asignar los colores a los elementos
+    Array.from(colorSelectedElements).forEach((element, index) => {
+        if (storedColors[index]) {
+            element.style.backgroundColor = storedColors[index];
+        }
+    });
+};
+
+  // Llamar a la función para asignar los colores al cargar la página
+assignColorsToElements();
+
+
+
+
+
+
+
+
 // let game1 = document.getElementById("gameline1");
 
 // for(let i = 0; i < 6; i++) {
@@ -17,14 +50,16 @@
 //         game2.appendChild(bolaElement)
 //     }
 
-let linegame = document.getElementById("linegame");
+// let linegame = document.getElementById("linegame");
 
-    for(let i = 0; i < 6; i++) {
-        let bolaElement = document.createElement('div');
-        bolaElement.classList.add("linegame");
-        bolaElement.id = `bola-${i}`;
-        linegame.appendChild(bolaElement);
-    }
+//     for(let i = 0; i < 6; i++) {
+//         let bolaElement = document.createElement('div');
+//         bolaElement.classList.add("linegame");
+//         bolaElement.id = `bola-${i}`;
+//         linegame.appendChild(bolaElement);
+//     }
+
+
 
 
 
