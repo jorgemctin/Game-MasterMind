@@ -50,7 +50,7 @@
                 <div class="col">
                     <div class="card border border-success h-100">
                         <div class="card-body">
-                            <div class="col">
+                            <!-- <div class="col">
                                 <div id="gameline"></div>
                             </div>
                             <div class="col">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col">
                                 <div id="gameline10"></div>             
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -81,24 +81,41 @@
             <div class="col d-flex justify-content-center">
                 <div class="card border border-success h-100">       
                     <div class="card-body">
-                    <div class="col">
-                        <div id="gameline1">
+                  
+                     
                             <div id="tablero">
                                 <div id="fila1" class="fila" onclick="pintaBola(10)">
-                                    <div class="col">
-                                        <div class="linegame"></div>
-                                        <div class="linegame"></div>
-                                        <div class="linegame"></div>
-                                        <div class="linegame"></div>
+                                    <div class="d-inline-flex flex-wrap">
+                                        <div id="gameline"class="d-inline-flex flex-wrap"><div class="gamecheck"></div>
+
+                                        </div>
+                                        <!-- <div id="gamecheck" class="d-inline-flex flex-wrap"></div> -->
                                     </div>
                                 </div>
                             </div>   
                             <div id="check" onclick="pintaTablero()">compr</div>
                         </div>
                     </div>
+                
+        </div>
+
+
+        <!-- <div class="col d-flex justify-content-center">
+            <div class="card border border-success h-100">       
+                <div class="card-body">
+                    <div id="gameline" class="d-inline-flex flex-wrap">
+                        <div id="tablero">
+                            <div id="fila1" class="fila" onclick="pintaBola(10)">
+                                <div class="d-inline-flex flex-wrap">
+                                    <div class="gamecheck"></div>
+                                </div>
+                            </div>
+                        </div>   
+                        <div id="check" onclick="pintaTablero()">compr</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
                         <!-- COLORS SELECTED: -->
                     
@@ -110,13 +127,7 @@
                                 <div class="card-body d-flex justify-content-center">
                                     <div class="bordercolor1">
                                         <div class="row d-flex justify-content-center">
-                                            <div class="colorSelected"></div>
-                                            <div class="colorSelected"></div>
-
-                                            <div class="colorSelected"></div>
-                                            <div class="colorSelected"></div>
-                                            <div class="colorSelected"></div><div class="colorSelected"></div>
-                                        
+                                            <div id="topBalls" class="d-inline-flex flex-wrap"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -132,23 +143,14 @@
                                 <div class="card border">
                                     <div class="card-body text-center">
                                         <h3>Combinación secreta:</h3>
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="bordercolor1">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="secretCombination"></div>
-                                                <div class="secretCombination"></div>
-                                                <div class="secretCombination"></div>
-                                                <div class="secretCombination"></div>
-                                            </div>
+                                        <div class="card-body d-flex justify-content-center">
+                                            <div id="topSecret" class="d-inline-flex flex-wrap"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        
       
 
     
@@ -156,11 +158,6 @@
 
 </div>
 
-
-<!-- <div id="tablero">
-    <div id="fila1" class="fila" onclick="pintaBola(10)">10</div>
-</div>
-<div id="check" onclick="pintaTablero()">Check!</div> -->
 
 
 

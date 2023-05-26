@@ -18,7 +18,7 @@
     height: 5em;
 }
 
-.checking {
+/* .checking {
     display: inline-block;
     height: 1.7em;
     width: 1.7em;
@@ -26,7 +26,7 @@
     border-radius: 50%;
     margin-left:0.7em;
     margin: 0.7em;
-}
+} */
 
 .secretCombination {
     display: inline-block;
@@ -48,17 +48,29 @@
 }
 
 .gameline1, .gameline2, .gameline3, .gameline4,.gameline5, .gameline6, .gameline7, .gameline8, .gameline9, .gameline10 {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
+    /* display: inline-block; */
+    height: 3em;
+    width: 3em;
     justify-content: center;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(181, 56, 56);
     border-radius: 50%;
-    margin: 0.7em;
+    margin: 0.5em;
 }
 /* .color{
     background-color: blue;
 } */
+
+.gamecheck{
+    /* display: inline-block; */
+    height: 1em;
+    width: 1em;
+    margin: 0.2em;
+   
+    background-color: rgb(71, 86, 190);
+    
+  
+
+}
 
 
 .linegame{
@@ -93,5 +105,6 @@ tablero */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1em;
 
 }

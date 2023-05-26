@@ -1,4 +1,84 @@
 
+let topSecret = document.getElementById('topSecret');
+
+topSecret.innerHTML = "";
+
+const secretBalls = [
+    '<div class="secretCombination"></div>',
+    '<div class="secretCombination"></div>',
+    '<div class="secretCombination"></div>',
+    '<div class="secretCombination"></div>',
+];
+
+const topSecretBalls = secretBalls.map(secretBalls => `<div>${secretBalls}</div>`);
+
+topSecret.innerHTML = topSecretBalls.join('');
+
+let topBalls = document.getElementById('topBalls');
+
+topBalls.innerHTML = "";
+
+const BallsSelected = [
+    '<div class="colorSelected"></div>',
+    '<div class="colorSelected"></div>',
+    '<div class="colorSelected"></div>',
+    '<div class="colorSelected"></div>',
+    '<div class="colorSelected"></div>',
+    '<div class="colorSelected"></div>',
+];
+
+const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelected}</div>`);
+
+topBalls.innerHTML = topBallsSelected.join('');
+
+let gameLine = document.getElementById('gameline');
+
+gameLine.innerHTML = "";
+
+const lineGame = [
+    '<div class="gameline1"></div>',
+    '<div class="gameline2"></div>',
+    '<div class="gameline3"></div>',
+    '<div class="gameline4"></div>',
+    '<div class="gamecheck"></div>',
+    '<div class="gamecheck"></div>',
+    '<div class="gamecheck"></div>',
+    '<div class="gamecheck"></div>',
+];
+
+const gameLineBalls = lineGame.map(lineGame => `<div>${lineGame}</div>`);
+
+gameLine.innerHTML = gameLineBalls.join('');
+
+
+
+
+
+// let gameCheck = document.getElementById('gamecheck');
+
+// gameCheck.innerHTML = "";
+
+// const gameCheckBalls = [
+//     '<div class="gamecheck"></div>',
+//     '<div class="gamecheck"></div>',
+// ];
+
+// const topGameCheckBalls = gameCheckBalls.map(gameCheckBalls => `<div>${gameCheckBalls}</div>`);
+
+// gameCheck.innerHTML = topGameCheckBalls.join('');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     const getStoredColors = () => {
     const storedColors = localStorage.getItem("selectedColors");
@@ -55,6 +135,14 @@ secretCombinationElementsArray.map((secretColor, index) => {
 
 
 
+
+
+
+
+
+
+
+// const nombres = ["Juan", "María", "Pedro", "Ana"];
 
 
 
