@@ -32,8 +32,6 @@ const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelecte
 topBalls.innerHTML = topBallsSelected.join('');
 
 
-
-
 const gameLine = document.getElementById('gameline');
 gameLine.innerHTML = "";
 
@@ -52,6 +50,96 @@ const gameCheck = [
 const gameLineBalls = [...lineGame, ...gameCheck];
 
 gameLine.innerHTML = gameLineBalls.join('');
+
+
+
+
+
+
+const getStoredColors = () => {
+    const storedColors = localStorage.getItem("selectedColors");
+if (storedColors) {
+    return JSON.parse(storedColors);
+} else {
+    return [];
+}
+};
+const assignColorsToElements = () => {
+const colorSelectedElements = document.getElementsByClassName("colorSelected");
+const storedColors = getStoredColors();
+
+// Asignar los colores a los elementos
+Array.from(colorSelectedElements).forEach((element, index) => {
+    if (storedColors[index]) {
+        element.style.backgroundColor = storedColors[index];
+    }
+});
+};
+// Llamar a la función para asignar los colores al cargar la página
+assignColorsToElements();
+
+
+
+
+
+        let tablero = document.getElementById('tablero');
+
+        let dificultad = 6;
+        let contador = 1;
+        
+        const compruebaGanadora =() =>{
+        
+        }
+        
+        const pintaBola = (fila, index) => {
+            const storedColors = getStoredColors();
+          
+            // Verificar que el índice esté dentro de los límites de lineGame
+            if (index < lineGame.length) {
+              const color = storedColors[index];
+              // Asignar el color a la bola de juego correspondiente
+              const bola = document.getElementById(`gameline${fila}`).children[index];
+              bola.style.backgroundColor = color;
+            }
+          };
+        
+        const pintaTablero = () => {
+            compruebaGanadora();
+          
+            if (dificultad > 1) {
+              const filaAnterior = document.getElementById(`fila${contador}`);
+              filaAnterior.removeAttribute("onclick");
+          
+              contador++;
+              const lineGame = [
+                '<div class="gameball1"></div>',
+                '<div class="gameball2"></div>',
+                '<div class="gameball3"></div>',
+                '<div class="gameball4"></div>',
+            ];
+            const gameCheck = [
+                '<div class="gamecheck"></div>',
+                '<div class="gamecheck"></div>',
+                '<div class="gamecheck"></div>',
+                '<div class="gamecheck"></div>',
+            ];
+            const gameLineBalls = [...lineGame, ...gameCheck];
+          
+              tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'><div class='d-inline-flex flex-wrap'>
+              <div id='gameline${contador}'class='d-inline-flex flex-wrap${contador}'>${gameLineBalls.join('')}
+              <div class='gamecheck${contador}'></div></div></div></div>`;
+
+        
+              
+          
+            //   const filaActual = document.getElementById(`fila${contador}`);
+            //   filaActual.setAttribute("onclick", `pintaBola(${contador})`);
+          
+              dificultad -= 1;
+            } else {
+              console.log("you died!");
+            }
+          };
 
 
 // const colorBalls = Array.from(gameLine);
@@ -135,27 +223,20 @@ gameLine.innerHTML = gameLineBalls.join('');
 
 
 
-    const getStoredColors = () => {
-        const storedColors = localStorage.getItem("selectedColors");
-    if (storedColors) {
-        return JSON.parse(storedColors);
-    } else {
-        return [];
-    }
-};
-    const assignColorsToElements = () => {
-    const colorSelectedElements = document.getElementsByClassName("colorSelected");
-    const storedColors = getStoredColors();
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    // Asignar los colores a los elementos
-    Array.from(colorSelectedElements).forEach((element, index) => {
-        if (storedColors[index]) {
-            element.style.backgroundColor = storedColors[index];
-        }
-    });
-};
-  // Llamar a la función para asignar los colores al cargar la página
-assignColorsToElements();
 
 
 
@@ -438,7 +519,7 @@ secretCombinationElementsArray.map((secretColor, index) => {
 //     }
 
 //     const storedColors = JSON.parse(localStorage.getItem("color"));
-   
+
 
 //     if (storedColors && storedColors.length === arrayColor1.length) {
 //         arrayColor1.forEach((colorElement, i) => {
@@ -510,27 +591,6 @@ secretCombinationElementsArray.map((secretColor, index) => {
     //     });
     //   };
     
-
-
-
-
-
-    let tablero = document.getElementById('tablero');
-
-    let dificultad = 6;
-    let contador = 1;
-    
-    
-    
-    const compruebaGanadora =() =>{
-    
-    }
-    
-    const pintaBola = (numeroDeFila)=> {
-    
-        console.timeLog("Has pintado la bola", numeroDeFila)
-    
-    }
     
     
         //     const pintaTablero = () => {
@@ -551,28 +611,28 @@ secretCombinationElementsArray.map((secretColor, index) => {
         //     }
         //   };
 
-         
-          const pintaTablero = () => {
-            compruebaGanadora();
-          
-            // Al no haber ganado nadie, el código continúa por aquí debajo...
-          
-            if (dificultad > 1) {
-              document.getElementById(`fila${contador}`).removeAttribute("onclick");
-          
-              contador++;
-          
-              tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'>${contador}</div>`;
-          
-              dificultad -= 1;
-            } else {
-              console.log("you died!");
-            }
-          };
+
+
+        
+        
 
   
 
-
+        //   const pintaTablero = () => {
+        //     compruebaGanadora();
+          
+        //     const filaActual = document.getElementById(`fila${contador}`);
+        //     const elementosActuales = filaActual.querySelectorAll('.gameball, .gamecheck');
+          
+        //     if (elementosActuales.length === gameLineBalls.length) {
+        //       return;
+        //     }
+          
+        //     filaActual.innerHTML = '';
+          
+        //     gameLineBalls.forEach((element) => {
+        //       filaActual.innerHTML += element;
+        //     });
 
 
 
