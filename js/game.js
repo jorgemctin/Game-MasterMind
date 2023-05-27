@@ -31,8 +31,10 @@ const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelecte
 
 topBalls.innerHTML = topBallsSelected.join('');
 
-let gameLine = document.getElementById('gameline');
 
+
+
+const gameLine = document.getElementById('gameline');
 gameLine.innerHTML = "";
 
 const lineGame = [
@@ -40,15 +42,75 @@ const lineGame = [
     '<div class="gameline2"></div>',
     '<div class="gameline3"></div>',
     '<div class="gameline4"></div>',
+];
+const gameCheck = [
     '<div class="gamecheck"></div>',
     '<div class="gamecheck"></div>',
     '<div class="gamecheck"></div>',
     '<div class="gamecheck"></div>',
 ];
-
-const gameLineBalls = lineGame.map(lineGame => `<div>${lineGame}</div>`);
+const gameLineBalls = [...lineGame, ...gameCheck];
 
 gameLine.innerHTML = gameLineBalls.join('');
+
+
+// const colorBalls = Array.from(gameLine);
+
+// colorBalls.map(
+//     (elementBalls, i) =>{
+//         elementBalls.addEventListener("click")
+//     }
+// )
+
+
+
+
+
+
+
+//FORMA PARA CREAR LAS BOLAS DEL JUEGO:
+
+// const gameLine = document.getElementById('gameline');
+// gameLine.innerHTML = '';
+
+// gameLine.innerHTML = `
+//     <div class="gameline1"></div>
+//     <div class="gameline2"></div>
+//     <div class="gameline3"></div>
+//     <div class="gameline4"></div>
+//     <div class="gamecheck"></div>
+//     <div class="gamecheck"></div>
+//     <div class="gamecheck"></div>
+//     <div class="gamecheck"></div>
+// `;
+
+
+
+// ---------------------
+
+
+
+
+
+
+// let gameLine = document.getElementById('gameline');
+
+// gameLine.innerHTML = "";
+
+// const lineGame = [
+//     '<div class="gameline1"></div>',
+//     '<div class="gameline2"></div>',
+//     '<div class="gameline3"></div>',
+//     '<div class="gameline4"></div>',
+//     '<div class="gamecheck"></div>',
+//     '<div class="gamecheck"></div>',
+//     '<div class="gamecheck"></div>',
+//     '<div class="gamecheck"></div>',
+// ];
+
+// const gameLineBalls = lineGame.map(lineGame => `<div>${lineGame}</div>`);
+
+// gameLine.innerHTML = gameLineBalls.join('');
 
 
 
@@ -73,15 +135,8 @@ gameLine.innerHTML = gameLineBalls.join('');
 
 
 
-
-
-
-
-
-
-
     const getStoredColors = () => {
-    const storedColors = localStorage.getItem("selectedColors");
+        const storedColors = localStorage.getItem("selectedColors");
     if (storedColors) {
         return JSON.parse(storedColors);
     } else {
@@ -101,6 +156,49 @@ gameLine.innerHTML = gameLineBalls.join('');
 };
   // Llamar a la función para asignar los colores al cargar la página
 assignColorsToElements();
+
+
+
+
+
+
+// const mapStoredColors = () => {
+//     const gameLineElements = document.querySelectorAll('.gameline1, .gameline2, .gameline3, .gameline4');
+//     const storedColors = getStoredColors();
+  
+//     gameLineElements.forEach((element, index) => {
+//       element.addEventListener('click', () => {
+//         const mappedColors = storedColors.map((color, i) => {
+//           return i === index ? color : 'default-color'; // Reemplaza 'default-color' con el color predeterminado si no hay uno almacenado
+//         });
+//         element.style.backgroundColor = mappedColors[index];
+//         localStorage.setItem("selectedColors", JSON.stringify(mappedColors));
+//       });
+//     });
+//   };
+  
+//   mapStoredColors();
+
+  const mapStoredColors = () => {
+    const gameLineElements = document.querySelectorAll('.gameline1, .gameline2, .gameline3, .gameline4');
+    const storedColors = getStoredColors();
+    let currentIndex = 0;
+  
+    gameLineElements.forEach((element) => {
+      element.addEventListener('click', () => {
+        const color = storedColors[currentIndex] || 'default-color'; // Reemplaza 'default-color' con el color predeterminado si no hay uno almacenado
+        element.style.backgroundColor = color;
+        currentIndex = (currentIndex + 1) % storedColors.length;
+      });
+    });
+  };
+  
+  mapStoredColors();
+
+
+
+
+
 
 
 //MAKE THE SECRET COMBINATION:
