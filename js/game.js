@@ -93,22 +93,22 @@ assignColorsToElements();
         
         const pintaBola = (fila, index) => {
             const storedColors = getStoredColors();
-          
-            // Verificar que el índice esté dentro de los límites de lineGame
-            if (index < lineGame.length) {
-              const color = storedColors[index];
-              // Asignar el color a la bola de juego correspondiente
-              const bola = document.getElementById(`gameline${fila}`).children[index];
-              bola.style.backgroundColor = color;
+        
+            // Verificar que el índice esté dentro de los límites de gameballs
+            if (index < 4) {
+                const color = storedColors[index];
+                // Asignar el color a la bola de juego correspondiente
+                const bola = document.getElementById(`gameline${fila}`).querySelector(`.gameball${index + 1}`);
+                bola.style.backgroundColor = color;
             }
-          };
+        };
         
         const pintaTablero = () => {
             compruebaGanadora();
           
             if (dificultad > 1) {
-              const filaAnterior = document.getElementById(`fila${contador}`);
-              filaAnterior.removeAttribute("onclick");
+            //   const filaAnterior = document.getElementById(`fila${contador}`);
+            //   filaAnterior.removeAttribute("onclick");
           
               contador++;
               const lineGame = [
@@ -125,7 +125,7 @@ assignColorsToElements();
             ];
             const gameLineBalls = [...lineGame, ...gameCheck];
           
-              tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'><div class='d-inline-flex flex-wrap'>
+              tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador}, 0)'><div class='d-inline-flex flex-wrap'>
               <div id='gameline${contador}'class='d-inline-flex flex-wrap${contador}'>${gameLineBalls.join('')}
               <div class='gamecheck${contador}'></div></div></div></div>`;
 
