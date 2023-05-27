@@ -38,10 +38,10 @@ const gameLine = document.getElementById('gameline');
 gameLine.innerHTML = "";
 
 const lineGame = [
-    '<div class="gameline1"></div>',
-    '<div class="gameline2"></div>',
-    '<div class="gameline3"></div>',
-    '<div class="gameline4"></div>',
+    '<div class="gameball1"></div>',
+    '<div class="gameball2"></div>',
+    '<div class="gameball3"></div>',
+    '<div class="gameball4"></div>',
 ];
 const gameCheck = [
     '<div class="gamecheck"></div>',
@@ -161,7 +161,6 @@ assignColorsToElements();
 
 
 
-
 // const mapStoredColors = () => {
 //     const gameLineElements = document.querySelectorAll('.gameline1, .gameline2, .gameline3, .gameline4');
 //     const storedColors = getStoredColors();
@@ -179,21 +178,25 @@ assignColorsToElements();
   
 //   mapStoredColors();
 
-  const mapStoredColors = () => {
-    const gameLineElements = document.querySelectorAll('.gameline1, .gameline2, .gameline3, .gameline4');
-    const storedColors = getStoredColors();
-    let currentIndex = 0;
-  
+
+
+
+//GIVING THE BALLS COLORS SELECTED BEFORE BY CLICKING
+
+    const mapStoredColors = () => {
+        const gameLineElements = document.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
+        const storedColors = getStoredColors();
+        let currentIndex = 0;
+    
     gameLineElements.forEach((element) => {
-      element.addEventListener('click', () => {
+        element.addEventListener('click', () => {
         const color = storedColors[currentIndex] || 'default-color'; // Reemplaza 'default-color' con el color predeterminado si no hay uno almacenado
         element.style.backgroundColor = color;
         currentIndex = (currentIndex + 1) % storedColors.length;
-      });
+        });
     });
-  };
-  
-  mapStoredColors();
+};
+mapStoredColors();
 
 
 
