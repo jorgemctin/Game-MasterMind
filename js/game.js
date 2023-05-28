@@ -159,15 +159,11 @@ const compruebaGanadora = (numeroDeFila) => {
       return hexColor;
     });
 
-    const arrayAlreadyChecked = ["","","",""];
-
     for (let i = 0; i < userColors.length; i++) {
 
       if (secretCombination[i] === userColors[i]) {
 
         negras += 1;
-
-        arrayAlreadyChecked[i]= userColors[i];
 
         paintAswerBlack(numeroDeFila, i);
 
@@ -253,7 +249,10 @@ pintaBola(contador);
 
 difficult -= 1;
     } else {
-        window.location.href = "../pages/loser.html";
+        // window.location.href = "../pages/loser.html";
+        const hideCombination = document.getElementById('hideCombination');
+        hideCombination.style.display = 'block';
+
     }
 };
 
