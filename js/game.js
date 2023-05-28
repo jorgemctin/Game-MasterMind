@@ -1,5 +1,4 @@
 //CREATING CLASSES
-
 let topSecret = document.getElementById('topSecret');
 
 topSecret.innerHTML = "";
@@ -18,27 +17,28 @@ topSecret.innerHTML = topSecretBalls.join('');
 const topBalls = document.getElementById('topBalls');
 topBalls.innerHTML = "";
 
-//FUNCTION CHANGE LEVEL 
-const nivel = localStorage.getItem("selectLevel");
+//LEVEL
+const level = localStorage.getItem("selectLevel");
 
 let cuantityColors;
-if (nivel === 'beginner') {
+if (level === 'beginner') {
     cuantityColors = 4;
-} else if (nivel === 'intermediate') {
+} else if (level === 'intermediate') {
     cuantityColors = 5;
-} else if (nivel === 'advanced') {
+} else if (level === 'advanced') {
     cuantityColors = 6;
 } else {
     cuantityColors = 0; // Valor predeterminado si el nivel no es válido
 }
 
-//CREATING ELEMENTS AND ASINGING THEM COLORS
+//CREATING ELEMENTS AND ASING COLORS
 const BallsSelected = new Array(cuantityColors).fill('<div class="colorSelected"></div>');
 const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelected}</div>`);
 
 topBalls.innerHTML = topBallsSelected.join('');
 
-//CREATE ROW GAMEBOARD
+//CREATING LINE GAME
+
 const gameLine = document.getElementById('gameline1');
 gameLine.innerHTML = "";
 
@@ -55,6 +55,7 @@ const gameCheck = [
     '<div class="gamecheck"></div>',
 ];
 const gameLineBalls = [...lineGame, ...gameCheck];
+
 gameLine.innerHTML = gameLineBalls.join('');
 
 //GET COLORS FROM LOCALSTORGAE
@@ -67,7 +68,8 @@ if (storedColors) {
 }
 };
 
-//COLORES SELECCIONADOS PÁGINA ANTERIOR
+//COLORS SELECTED IN THE PAGE BEFORE
+
 const assignColorsToElements = () => {
     const colorSelectedElements = document.getElementsByClassName("colorSelected");
     const storedColors = getStoredColors();
@@ -83,6 +85,7 @@ const assignColorsToElements = () => {
     assignColorsToElements();
 
 //CHANGE TO HEXADECIMAL
+
 const rgbToHex = (rgbColor) => {
     const match = rgbColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
   
@@ -90,6 +93,7 @@ const rgbToHex = (rgbColor) => {
       const r = parseInt(match[1]);
       const g = parseInt(match[2]);
       const b = parseInt(match[3]);
+
       const componentToHex = (c) => {
         const hex = c.toString(16);
         return hex.length === 1 ? "0" + hex : hex;
@@ -217,7 +221,6 @@ difficult -= 1;
         // window.location.href = "../pages/loser.html";
         const hideCombination = document.getElementById('hideCombination');
         hideCombination.style.display = 'block';
-
     }
 };
 
