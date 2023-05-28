@@ -47,12 +47,12 @@
     border: 0.1em solid black;
 }
 
-.gameball1, .gameball2, .gameball3, .gameball4,.gameline5, .gameline6, .gameline7, .gameline8, .gameline9, .gameline10 {
+.gameball1, .gameball2, .gameball3, .gameball4{
     display: inline-block;
     height: 3em;
     width: 3em;
     justify-content: center;
-    background-color: rgb(121, 68, 33);
+    /* background-color: rgb(121, 68, 33); */
     border-radius: 50%;
     margin: 0.5em;
     border: 0.1em solid black;
