@@ -20,24 +20,24 @@ topBalls.innerHTML = "";
 
 const nivel = localStorage.getItem("selectLevel");
 
-let cantidadColores;
+let cuantityColors;
 if (nivel === 'beginner') {
-  cantidadColores = 4;
+    cuantityColors = 4;
 } else if (nivel === 'intermediate') {
-  cantidadColores = 5;
+    cuantityColors = 5;
 } else if (nivel === 'advanced') {
-  cantidadColores = 6;
+    cuantityColors = 6;
 } else {
-  cantidadColores = 0; // Valor predeterminado si el nivel no es válido
+    cuantityColors = 0; // Valor predeterminado si el nivel no es válido
 }
 
-const BallsSelected = new Array(cantidadColores).fill('<div class="colorSelected"></div>');
+const BallsSelected = new Array(cuantityColors).fill('<div class="colorSelected"></div>');
 const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelected}</div>`);
 
 topBalls.innerHTML = topBallsSelected.join('');
 
 
-const gameLine = document.getElementById('gameline');
+const gameLine = document.getElementById('gameline1');
 gameLine.innerHTML = "";
 
 const lineGame = [
@@ -57,6 +57,7 @@ const gameLineBalls = [...lineGame, ...gameCheck];
 gameLine.innerHTML = gameLineBalls.join('');
 
 
+
 //GET COLORS FROM LOCALSTORGAE
 const getStoredColors = () => {
     const storedColors = localStorage.getItem("selectedColors");
@@ -67,6 +68,47 @@ if (storedColors) {
 }
 };
 
+
+
+//COLORES SELECCIONADOS PÁGINA ANTERIOR
+
+const assignColorsToElements = () => {
+    const colorSelectedElements = document.getElementsByClassName("colorSelected");
+    const storedColors = getStoredColors();
+    
+    // Asignar los colores a los elementos
+    Array.from(colorSelectedElements).forEach((element, index) => {
+        if (storedColors[index]) {
+            element.style.backgroundColor = storedColors[index];
+        }
+    });
+    };
+    // Llamar a la función para asignar los colores al cargar la página
+    assignColorsToElements();
+
+
+//CHANGE TO HEXADECIMAL
+
+const rgbToHex = (rgbColor) => {
+    const match = rgbColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  
+    if (match) {
+      const r = parseInt(match[1]);
+      const g = parseInt(match[2]);
+      const b = parseInt(match[3]);
+  
+      const componentToHex = (c) => {
+        const hex = c.toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      };
+  
+      const hexColor = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  
+      return hexColor;
+    }
+  
+    return rgbColor;
+  };
 
 //CHANGIND DIFICULT SELECTED:
 
@@ -97,41 +139,65 @@ let tablero = document.getElementById('tablero');
 
 let contador = 1;
 
+
+
+
 //CHECK WINNER COMBINATION
 
 
 
-const compruebaGanadora = () =>{
-    console.log(secretCombination, "soy la combi completa");
-    const gameLineUser = document.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
+const compruebaGanadora = (numeroDeFila) => {
+    const gameLineUser = Array.from(document.getElementById(`gameline${numeroDeFila}`).querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4'));
+  
+    let blancas = 0;
+    let negras = 0;
+  
+    const userColors = gameLineUser.map((ball) => {
+      const backgroundColor = window.getComputedStyle(ball).backgroundColor;
+      const hexColor = rgbToHex(backgroundColor);
+      ball.style.backgroundColor = hexColor; // Establecer el color de fondo en el valor hexadecimal
+      return hexColor;
+    });
 
-    blancas = 0;
-    negras = 0;
+    const arrayAlreadyChecked = ["","","",""];
 
-    console.log (gameLineUser, " soy la que juega");
-    console.log (secretCombination, " soy la que gana");
+    for (let i = 0; i < userColors.length; i++) {
 
+      if (secretCombination[i] === userColors[i]) {
 
-    for (let i = 0; i < secretCombination.length; i++) {
-        if (secretCombination[i] === gameLineUser[i]) {
-            negras += 1;
+        negras += 1;
 
-            console.log('he ganado', negras, " fichas negras");
-            if (negras === 4) {
-                //ganador de la partida
-                window.location.href= "../pages/winner.html";
-            }
-        } 
+        arrayAlreadyChecked[i]= userColors[i];
+
+        paintAswerBlack(numeroDeFila, i);
+
+        if (negras === 4) {
+            // Ganador de la partida
+            window.location.href = "../pages/winner.html";
+        }
+
+      } else if (secretCombination.includes(userColors[i]) && secretCombination[i] !== userColors[i]) {
+        blancas += 1;
+        paintAswerWhite(numeroDeFila, i);
+      }
     }
+  };
 
-   
-}
+  paintAswerWhite = (rowNumber, index) => {
+    const gameChecks = Array.from(document.getElementById(`gameline${rowNumber}`).querySelectorAll('.gamecheck'));
+    gameChecks[index].style.backgroundColor = 'white';
+  }
 
-let currentIndex = 0;
+  paintAswerBlack = (rowNumber, index) => {
+    console.log("paintAswerBlack", rowNumber, index);
+
+    const gameChecks = Array.from(document.getElementById(`gameline${rowNumber}`).querySelectorAll('.gamecheck'));
+    gameChecks[index].style.backgroundColor = 'black';
+  }
 
 
 //CHANGING BALL'S COLORS BY CLIC
-
+let currentIndex = 0;
 const mapStoredColors = () => {
     const gameLineElements = document.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
     const storedColors = getStoredColors();
@@ -169,13 +235,14 @@ const pintaBola = (filaIndex) => {
 
 //FUNCTION CHECKING WINNER AND CREATE NEW LINE        
 const pintaTablero = () => {
-    compruebaGanadora();
+    compruebaGanadora(contador);
 
     
         
     if (difficult > 1) {
             contador++;
             const gameLineBalls  = [...lineGame, ...gameCheck];
+            
         
             tablero.innerHTML += `<div id='fila${contador}' class='fila'><div class='d-inline-flex flex-wrap'>
                 <div id='gameline${contador}' class='d-inline-flex flex-wrap'>${gameLineBalls.join('')}
@@ -186,76 +253,60 @@ pintaBola(contador);
 
 difficult -= 1;
     } else {
-    console.log("you died!");
+        window.location.href = "../pages/loser.html";
     }
 };
 
-//COLORES SELECCIONADOS PÁGINA ANTERIOR
-
-const assignColorsToElements = () => {
-const colorSelectedElements = document.getElementsByClassName("colorSelected");
-const storedColors = getStoredColors();
-
-// Asignar los colores a los elementos
-Array.from(colorSelectedElements).forEach((element, index) => {
-    if (storedColors[index]) {
-        element.style.backgroundColor = storedColors[index];
-        console.log(`Color asignado a elemento ${index}: ${storedColors[index]}`);
-    }
-});
-};
-// Llamar a la función para asignar los colores al cargar la página
-assignColorsToElements();
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// BLANCAS Y NEGRAS!!!
+
+
+// for (let i = 0; i < secretCombination.length; i++) {
+
+//     if (secretCombination.includes === (userColors[i])){
+//         if (secretCombination[i] === element[i]) {
+//             //Includes take out the white's one
+//             negras += 1;
+//             console.log('he ganado', negras, "fichas negras");
+        
             
+            
+//             if (negras === 4) {
+                
+//                 // Ganador de la partida
+//                 window.location.href = "../pages/winner.html";
+//                 }
+//             }
+//         }else{
+//             blancas += 1;
+//             console.log('he ganado', blancas, "fichas blancas");
+//         }    
+//     } 
+// };
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-// const mapStoredColors = () => {
-//     const gameLineElements = document.querySelectorAll('.gameline1, .gameline2, .gameline3, .gameline4');
-//     const storedColors = getStoredColors();
-  
-//     gameLineElements.forEach((element, index) => {
-//       element.addEventListener('click', () => {
-//         const mappedColors = storedColors.map((color, i) => {
-//           return i === index ? color : 'default-color'; // Reemplaza 'default-color' con el color predeterminado si no hay uno almacenado
-//         });
-//         element.style.backgroundColor = mappedColors[index];
-//         localStorage.setItem("selectedColors", JSON.stringify(mappedColors));
-//       });
-//     });
-//   };
-  
-//   mapStoredColors();
 
 
 
