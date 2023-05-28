@@ -18,16 +18,6 @@
     height: 5em;
 }
 
-/* .checking {
-    display: inline-block;
-    height: 1.7em;
-    width: 1.7em;
-    background-color: rgb(20, 20, 20);
-    border-radius: 50%;
-    margin-left:0.7em;
-    margin: 0.7em;
-} */
-
 .secretCombination {
     display: inline-block;
     height: 2em;
@@ -55,7 +45,7 @@
     justify-content: center;
     /* background-color: rgb(121, 68, 33); */
     border-radius: 50%;
-    /* margin: 0.5em; */
+    margin: 0.1em;
     border: 0.1em solid black;
     margin-bottom: -0.2em;
 }
@@ -69,11 +59,7 @@
     width: 0.9em;
     margin: 0.1em;
     margin-top: -0.3em;
-   
     background-color: rgb(71, 86, 190);
-    
-  
-
 }
 
 
