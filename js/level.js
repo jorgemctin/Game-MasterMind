@@ -118,7 +118,10 @@
 
 
 
-    let selectedLevelValue = 'beginner';
+
+
+//SAVING THE LEVEN PICKED IN LOCAL STORAGE:
+let selectedLevelValue = 'beginner';
 
 const selectLevel = (level) => {
     console.log("selectLevel", level);
@@ -127,4 +130,4 @@ const selectLevel = (level) => {
 
 const goToColorPicker = () => {
     localStorage.setItem("selectLevel", selectedLevelValue);
-}
+};

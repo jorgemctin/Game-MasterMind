@@ -1,3 +1,4 @@
+//CREATING CLASSES
 
 let topSecret = document.getElementById('topSecret');
 
@@ -52,6 +53,7 @@ const gameLineBalls = [...lineGame, ...gameCheck];
 gameLine.innerHTML = gameLineBalls.join('');
 
 
+//GET COLORS FROM LOCALSTORGAE
 const getStoredColors = () => {
     const storedColors = localStorage.getItem("selectedColors");
 if (storedColors) {
@@ -62,22 +64,45 @@ if (storedColors) {
 };
 
 
+//CHANGIND DIFICULT SELECTED:
 
 
-
+const retrieveLevelFromLocalStorage = () => {
+    const storedLevel = localStorage.getItem("selectLevel");
+    
+    let counter;
+    
+    if (storedLevel === "beginner") {
+      counter = 6;
+    } else if (storedLevel === "intermediate") {
+      counter = 8;
+    } else if (storedLevel === "advanced") {
+      counter = 10;
+    } else {
+      // Valor predeterminado en caso de que no se encuentre el nivel almacenado o no sea válido
+      counter = 6;
+    }
+    
+    return counter;
+  };
+  let initialDificultad = retrieveLevelFromLocalStorage();
+  let difficult = initialDificultad;
+//GAMEBOARD
 let tablero = document.getElementById('tablero');
 
-        let dificultad = 6;
-        let contador = 1;
-        
-        
-        const compruebaGanadora = () =>{
-        
-        }
-        
-    
-        let currentIndex = 0;
-//Al HACER CLICK CAMBIAR EL COLOR POR LOS SELECCIONADOS
+
+let contador = 1;
+
+//CHECK WINNER COMBINATION
+
+const compruebaGanadora = () =>{
+
+}
+
+let currentIndex = 0;
+
+
+//CHANGING BALL'S COLORS BY CLIC
 
 const mapStoredColors = () => {
     const gameLineElements = document.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
@@ -94,71 +119,65 @@ gameLineElements.forEach((element) => {
 };
 mapStoredColors();
 
-        
+//CHANGING BALL'S COLORS BY CLIC AFTER LINE 1
+const pintaBola = (filaIndex) => {
+    const filas = document.querySelectorAll(`#fila${filaIndex}`);
+    const storedColors = getStoredColors();
 
-        const pintaBola = (filaIndex) => {
-            const filas = document.querySelectorAll(`#fila${filaIndex}`);
-            const storedColors = getStoredColors();
-          
-            filas.forEach((fila) => {
-              const gameLineElements = fila.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
-              let currentIndex = 0;
-          
-              gameLineElements.forEach((element) => {
-                element.addEventListener('click', () => {
-                  const color = storedColors[currentIndex] || 'default-color';
-                  element.style.backgroundColor = color;
-                  currentIndex = (currentIndex + 1) % storedColors.length;
-                });
-              });
+    filas.forEach((fila) => {
+        const gameLineElements = fila.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
+        let currentIndex = 0;
+
+    gameLineElements.forEach((element) => {
+        element.addEventListener('click', () => {
+            const color = storedColors[currentIndex] || 'default-color';
+            element.style.backgroundColor = color;
+            currentIndex = (currentIndex + 1) % storedColors.length;
             });
-          };
-          
-          pintaBola();
+        });
+    });
+};
+    
 
+//FUNCTION CHECKING WINNER AND CREATE NEW LINE        
+const pintaTablero = () => {
+    compruebaGanadora();
+
+    
         
-            const pintaTablero = () => {
-            compruebaGanadora();
-        
-            if (dificultad > 1) {
-      
-            
-        
+    if (difficult > 1) {
             contador++;
-            
             const gameLineBalls  = [...lineGame, ...gameCheck];
         
             tablero.innerHTML += `<div id='fila${contador}' class='fila'><div class='d-inline-flex flex-wrap'>
-      <div id='gameline${contador}' class='d-inline-flex flex-wrap'>${gameLineBalls.join('')}
-      <div class='gamecheck${contador}'></div></div></div></div>`;
-      assignColorsToElements();
+                <div id='gameline${contador}' class='d-inline-flex flex-wrap'>${gameLineBalls.join('')}
+                <div class='gamecheck${contador}'></div></div></div></div>`;
 
-      pintaBola(contador);
+assignColorsToElements();
+pintaBola(contador);
 
-   
-        
-            dificultad -= 1;
-            } else {
-            console.log("you died!");
-            }
-        };
-        
-        //COLORES SELECCIONADOS PÁGINA ANTERIOR
-        
-        const assignColorsToElements = () => {
-        const colorSelectedElements = document.getElementsByClassName("colorSelected");
-        const storedColors = getStoredColors();
-        
-        // Asignar los colores a los elementos
-        Array.from(colorSelectedElements).forEach((element, index) => {
-            if (storedColors[index]) {
-                element.style.backgroundColor = storedColors[index];
-                console.log(`Color asignado a elemento ${index}: ${storedColors[index]}`);
-            }
-        });
-        };
-        // Llamar a la función para asignar los colores al cargar la página
-        assignColorsToElements();
+difficult -= 1;
+    } else {
+    console.log("you died!");
+    }
+};
+
+//COLORES SELECCIONADOS PÁGINA ANTERIOR
+
+const assignColorsToElements = () => {
+const colorSelectedElements = document.getElementsByClassName("colorSelected");
+const storedColors = getStoredColors();
+
+// Asignar los colores a los elementos
+Array.from(colorSelectedElements).forEach((element, index) => {
+    if (storedColors[index]) {
+        element.style.backgroundColor = storedColors[index];
+        console.log(`Color asignado a elemento ${index}: ${storedColors[index]}`);
+    }
+});
+};
+// Llamar a la función para asignar los colores al cargar la página
+assignColorsToElements();
 
 
 
@@ -166,80 +185,7 @@ mapStoredColors();
             
 
 
-// const colorBalls = Array.from(gameLine);
 
-// colorBalls.map(
-//     (elementBalls, i) =>{
-//         elementBalls.addEventListener("click")
-//     }
-// )
-
-
-
-
-
-
-
-//FORMA PARA CREAR LAS BOLAS DEL JUEGO:
-
-// const gameLine = document.getElementById('gameline');
-// gameLine.innerHTML = '';
-
-// gameLine.innerHTML = `
-//     <div class="gameline1"></div>
-//     <div class="gameline2"></div>
-//     <div class="gameline3"></div>
-//     <div class="gameline4"></div>
-//     <div class="gamecheck"></div>
-//     <div class="gamecheck"></div>
-//     <div class="gamecheck"></div>
-//     <div class="gamecheck"></div>
-// `;
-
-
-
-// ---------------------
-
-
-
-
-
-
-// let gameLine = document.getElementById('gameline');
-
-// gameLine.innerHTML = "";
-
-// const lineGame = [
-//     '<div class="gameline1"></div>',
-//     '<div class="gameline2"></div>',
-//     '<div class="gameline3"></div>',
-//     '<div class="gameline4"></div>',
-//     '<div class="gamecheck"></div>',
-//     '<div class="gamecheck"></div>',
-//     '<div class="gamecheck"></div>',
-//     '<div class="gamecheck"></div>',
-// ];
-
-// const gameLineBalls = lineGame.map(lineGame => `<div>${lineGame}</div>`);
-
-// gameLine.innerHTML = gameLineBalls.join('');
-
-
-
-
-
-// let gameCheck = document.getElementById('gamecheck');
-
-// gameCheck.innerHTML = "";
-
-// const gameCheckBalls = [
-//     '<div class="gamecheck"></div>',
-//     '<div class="gamecheck"></div>',
-// ];
-
-// const topGameCheckBalls = gameCheckBalls.map(gameCheckBalls => `<div>${gameCheckBalls}</div>`);
-
-// gameCheck.innerHTML = topGameCheckBalls.join('');
 
 
 

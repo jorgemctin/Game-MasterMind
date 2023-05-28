@@ -51,11 +51,13 @@
     display: inline-block;
     height: 3em;
     width: 3em;
+    display: flex;
     justify-content: center;
     /* background-color: rgb(121, 68, 33); */
     border-radius: 50%;
     margin: 0.5em;
     border: 0.1em solid black;
+    margin-bottom: -0.2em;
 }
 /* .color{
     background-color: blue;
@@ -66,14 +68,18 @@
     height: 1em;
     width: 1em;
     margin: 0.2em;
+    margin-top: -0.3em;
    
     background-color: rgb(71, 86, 190);
     
   
 
 }
+/* .gameline{
+    margin: 1em;
+} */
 
-
+/* 
 .linegame{
     display: inline-block;
     height: 2em;
@@ -82,7 +88,7 @@
     background-color: rgb(20, 20, 20);
     border-radius: 50%;
     margin: 0.7em;
-}
+} */
 
 /* 
 tablero */
