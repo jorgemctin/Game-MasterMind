@@ -15,19 +15,23 @@ const topSecretBalls = secretBalls.map(secretBalls => `<div>${secretBalls}</div>
 
 topSecret.innerHTML = topSecretBalls.join('');
 
-let topBalls = document.getElementById('topBalls');
-
+const topBalls = document.getElementById('topBalls');
 topBalls.innerHTML = "";
 
-const BallsSelected = [
-    '<div class="colorSelected"></div>',
-    '<div class="colorSelected"></div>',
-    '<div class="colorSelected"></div>',
-    '<div class="colorSelected"></div>',
-    '<div class="colorSelected"></div>',
-    '<div class="colorSelected"></div>',
-];
+const nivel = localStorage.getItem("selectLevel");
 
+let cantidadColores;
+if (nivel === 'beginner') {
+  cantidadColores = 4;
+} else if (nivel === 'intermediate') {
+  cantidadColores = 5;
+} else if (nivel === 'advanced') {
+  cantidadColores = 6;
+} else {
+  cantidadColores = 0; // Valor predeterminado si el nivel no es válido
+}
+
+const BallsSelected = new Array(cantidadColores).fill('<div class="colorSelected"></div>');
 const topBallsSelected = BallsSelected.map(BallsSelected => `<div>${BallsSelected}</div>`);
 
 topBalls.innerHTML = topBallsSelected.join('');
@@ -95,8 +99,32 @@ let contador = 1;
 
 //CHECK WINNER COMBINATION
 
-const compruebaGanadora = () =>{
 
+
+const compruebaGanadora = () =>{
+    console.log(secretCombination, "soy la combi completa");
+    const gameLineUser = document.querySelectorAll('.gameball1, .gameball2, .gameball3, .gameball4');
+
+    blancas = 0;
+    negras = 0;
+
+    console.log (gameLineUser, " soy la que juega");
+    console.log (secretCombination, " soy la que gana");
+
+
+    for (let i = 0; i < secretCombination.length; i++) {
+        if (secretCombination[i] === gameLineUser[i]) {
+            negras += 1;
+
+            console.log('he ganado', negras, " fichas negras");
+            if (negras === 4) {
+                //ganador de la partida
+                window.location.href= "../pages/winner.html";
+            }
+        } 
+    }
+
+   
 }
 
 let currentIndex = 0;

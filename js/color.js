@@ -1,5 +1,40 @@
 const colors = ['#41EC74', '#351FE0', '#E6A3A3', '#8ADFF4', '#E81717', '#EE53D2'];
 
+
+
+const setCantidadColores = () => {
+  const container = document.querySelector('.bordercolor1');
+  container.innerHTML = ''; // Elimina todos los elementos actuales dentro del contenedor
+
+  const nivel = localStorage.getItem("selectLevel");
+
+  let cantidadColores;
+  if (nivel === 'beginner') {
+    cantidadColores = 4;
+  } else if (nivel === 'intermediate') {
+    cantidadColores = 5;
+  } else if (nivel === 'advanced') {
+    cantidadColores = 6;
+  } else {
+    cantidadColores = 0; // Valor predeterminado si el nivel no es válido
+  }
+
+  for (let i = 0; i < cantidadColores; i++) {
+    const colorpickerDiv = document.createElement('div');
+    colorpickerDiv.classList.add('colorpicker');
+
+    const input = document.createElement('input');
+    input.type = 'color';
+    input.id = i;
+
+    colorpickerDiv.appendChild(input);
+    container.appendChild(colorpickerDiv);
+  }
+};
+
+// Ejemplo de uso
+setCantidadColores();
+
 const storeColors = () => {
   const selectedColors = [];
   colorInputs.forEach(input => {
@@ -18,6 +53,11 @@ colorInputs.forEach(input => {
     storeColors();
   });
 });
+
+
+
+
+
 
 
 
