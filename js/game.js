@@ -218,9 +218,9 @@ pintaBola(contador);
 
 difficult -= 1;
     } else {
-        // window.location.href = "../pages/loser.html";
-        const hideCombination = document.getElementById('hideCombination');
-        hideCombination.style.display = 'block';
+        window.location.href = "../pages/loser.html";
+        // const hideCombination = document.getElementById('hideCombination');
+        // hideCombination.style.display = 'block';
     }
 };
 
