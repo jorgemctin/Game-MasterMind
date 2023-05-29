@@ -32,7 +32,7 @@ En caso de haber hecho clic en 'Principiante' dispondrá de 4 colores para elegi
 
 ![game](./img/game.png)
 
-Al ingresar en la pestaña del juego se verán do recuadros, uno con el juego y otro con los colores que ha seleccionado.
+Al ingresar en la pestaña del juego se verán dos recuadros, uno con el juego en el cuál se deberá hacer clic en las bolas para que vayan cambiando de color junto con el botón comprobar para verificar si se ha acertado la combinación y otro que servirá como guía para recordar que cuales fueron seleccionados.
 
 ![menu2](./img/menu2.png)
 

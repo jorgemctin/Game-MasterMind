@@ -145,7 +145,7 @@ const compruebaGanadora = (numeroDeFila) => {
         negras += 1;
         paintAswerBlack(numeroDeFila, i);
         if (negras === 4) {
-            // Ganador de la partida
+            //WINNNER
             window.location.href = "../pages/winner.html";
         }
       } else if (secretCombination.includes(userColors[i]) && secretCombination[i] !== userColors[i]) {
