@@ -1,4 +1,4 @@
-//SAVING THE LEVEN PICKED IN LOCAL STORAGE:
+//SAVING THE LEVEL IN LOCAL STORAGE:
 let selectedLevelValue = 'beginner';
 
 const selectLevel = (level) => {

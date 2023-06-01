@@ -1,5 +1,8 @@
-//BACKGROUND IMAGE
-// window.onload = function() {
-//     var body = document.getElementsByTagName("body")[0];
-//     body.style.backgroundImage = "url('../img/backgroundgame.png')";
-// };
+
+//SET USERNAME TO LOCAL
+let userName = document.getElementById("user");
+
+const storeUserName = () => 
+localStorage.setItem("userName", document.getElementById("user").value);
+
+
