@@ -110,13 +110,13 @@ const retrieveLevelFromLocalStorage = () => {
     let counter;
     
     if (storedLevel === "beginner") {
-      counter = 6;
+      counter = 10;
     } else if (storedLevel === "intermediate") {
       counter = 8;
     } else if (storedLevel === "advanced") {
-      counter = 10;
+      counter = 6;
     } else {
-      // Valor predeterminado en caso de que no se encuentre el nivel almacenado o no sea válido
+      //DEFAULT VALUE
       counter = 6;
     }
     
@@ -183,7 +183,7 @@ gameLineElements.forEach((element) => {
 mapStoredColors();
 
 //CHANGING BALL'S COLORS BY CLIC AFTER LINE 1
-const pintaBola = (filaIndex) => {
+const paintingBall = (filaIndex) => {
     const filas = document.querySelectorAll(`#fila${filaIndex}`);
     const storedColors = getStoredColors();
 
@@ -204,7 +204,7 @@ const pintaBola = (filaIndex) => {
 //FUNCTION CHECKING WINNER AND CREATE NEW LINE        
 const pintaTablero = () => {
     compruebaGanadora(contador);
-   
+
 if (difficult > 1) {
         contador++;
         const gameLineBalls  = [...lineGame, ...gameCheck];
@@ -214,7 +214,7 @@ if (difficult > 1) {
             <div class='gamecheck${contador}'></div></div></div></div>`;
 
 assignColorsToElements();
-pintaBola(contador);
+paintingBall(contador);
 
 difficult -= 1;
     } else {
