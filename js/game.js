@@ -74,18 +74,17 @@ const assignColorsToElements = () => {
     const colorSelectedElements = document.getElementsByClassName("colorSelected");
     const storedColors = getStoredColors();
     
-    // Asignar los colores a los elementos
+    //ASIGN COLORS
     Array.from(colorSelectedElements).forEach((element, index) => {
         if (storedColors[index]) {
             element.style.backgroundColor = storedColors[index];
         }
     });
     };
-    // Llamar a la función para asignar los colores al cargar la página
+    // CALLING THE FUNCTION 
     assignColorsToElements();
 
 //CHANGE TO HEXADECIMAL
-
 const rgbToHex = (rgbColor) => {
     const match = rgbColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
   
@@ -247,4 +246,4 @@ let secretCombinationElementsArray = Array.from(secretCombinationElements);
 
 secretCombinationElementsArray.map((secretColor, index) => {
     secretColor.style.backgroundColor = secretCombination[index]
-})
+});
