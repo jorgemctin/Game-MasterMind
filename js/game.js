@@ -132,6 +132,7 @@ const chekingWinner = (lineNumber) => {
       ball.style.backgroundColor = hexColor; // Establecer el color de fondo en el valor hexadecimal
       return hexColor;
     });
+    
     for (let i = 0; i < userColors.length; i++) {
       if (secretCombination[i] === userColors[i]) {
         negras += 1;
@@ -164,7 +165,7 @@ const mapStoredColors = () => {
 
 gameLineElements.forEach((element) => {
     element.addEventListener('click', () => {
-    const color = storedColors[currentIndex] || 'default-color'; // Reemplaza 'default-color' con el color predeterminado si no hay uno almacenado
+    const color = storedColors[currentIndex] || 'default-color';
     element.style.backgroundColor = color;
     currentIndex = (currentIndex + 1) % storedColors.length;
     });
@@ -195,7 +196,7 @@ const paintingBall = (filaIndex) => {
 const createTable = () => {
     chekingWinner(contador);
 
-if (difficult => 1) {
+if (difficult > 1) {
         contador++;
         const gameLineBalls  = [...lineGame, ...gameCheck];
       
