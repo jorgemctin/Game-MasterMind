@@ -2,16 +2,13 @@
     margin: 0;
     padding: 0;
 }
-
 .container1{
     min-height: 100vh;
     background-color: rgba(108, 108, 223, 0.274);
 }
-
 .topcolor{
     height: 8em;
 }
-
 .bordercolor1{
     width: 33em;
     display: flex;
@@ -20,7 +17,6 @@
     background-color: rgba(213, 238, 138, 0.621);
     border-radius: 2em;
 }
-
 .colorpicker {
     display: inline-block;
     height: 1.6em;
@@ -28,7 +24,6 @@
     margin: 1em;
     cursor: pointer;
 }
-
 .colorSelected {
 
     display: inline-block;

@@ -192,10 +192,10 @@ const paintingBall = (filaIndex) => {
 };
     
 //FUNCTION CHECKING WINNER AND CREATE NEW LINE        
-const pintaTablero = () => {
+const createTable = () => {
     chekingWinner(contador);
 
-if (difficult > 1) {
+if (difficult => 1) {
         contador++;
         const gameLineBalls  = [...lineGame, ...gameCheck];
       

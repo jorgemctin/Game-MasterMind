@@ -1,9 +1,8 @@
 .head {
-    height:12em;
+    height:7em;
 }
-
 .top{
-    height: 9em;
+    height: 7em;
 }
 .container1{
     min-height: 100vh;
@@ -20,5 +19,4 @@
     border-radius: 50em 50em 50em 50em;
     border-top-style:ridge;
 }
-
 
