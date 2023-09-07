@@ -10,7 +10,7 @@
     height: 8em;
 }
 .bordercolor1{
-    width: 33em;
+    /* width: 20em; */
     display: flex;
     justify-content: center;
     align-items: center;

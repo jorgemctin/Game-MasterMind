@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,43 @@
     <title>ACERCA DE</title>
     <link rel="shortcut icon" href="../img/2730389_brain_divide_inkcontober_sains_icon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-        <!-- NAVBAR --> 
-<div class="container1"> 
-    <div class="container">
-        <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(9, 23, 91, 0.641);">
-            <div class="container-fluid d-flex justify-content-start gap-1">
-                <div class="dropdown btn btn-outline-dark">
-                    <button class="btn btn-sm btn-secondary dropdown-toggle"  style="background-color:#581209c7;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ARCHIVO
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../pages/user.html">Nuevo Juego</a></li>
-                        <li><a class="dropdown-item" href="../pages/colors.html">Opciones</a></li>
-                        <li><a class="dropdown-item" href="../pages/level.html">Nivel</a></li>
-                        <li><a class="dropdown-item" href="../index.html">Salir</a></li>
-                    </ul>
+    <!-- NAVBAR -->
+    <div class="container1">
+        <div class="container">
+            <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(9, 23, 91, 0.641);">
+                <div class="container-fluid d-flex justify-content-start gap-1">
+                    <div class="dropdown btn btn-outline-dark">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" style="background-color:#581209c7;"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ARCHIVO
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../pages/user.html">Nuevo Juego</a></li>
+                            <li><a class="dropdown-item" href="../pages/colors.html">Opciones</a></li>
+                            <li><a class="dropdown-item" href="../pages/level.html">Nivel</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Salir</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown btn btn-outline-dark">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" style="background-color:#581209c7;"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            AYUDA
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../pages/howtoplay.html">¿Cómo Jugar?</a></li>
+                            <li><a class="dropdown-item" href="../pages/about.html">Acerca De</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="dropdown btn btn-outline-dark">
-                    <button class="btn btn-sm btn-secondary dropdown-toggle" style="background-color:#581209c7;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        AYUDA
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../pages/howtoplay.html">¿Cómo Jugar?</a></li>
-                        <li><a class="dropdown-item" href="../pages/about.html">Acerca De</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>  
+            </nav>
 
             <!-- ABOUT TITLE -->
-        <div class="head"></div>
+            <div class="head"></div>
             <div class="container-fluid flex-column justify-content-around">
                 <div class="row">
                     <div class="col p-2 fs-1 text-center" style="background-color:#33468d58;">
@@ -49,34 +53,44 @@
                 </div>
             </div>
 
-                <!-- ABOUT GAME -->
-        <div class="container mt-2">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 d-flex justify-content-center">
-                <div class="col mt-3">
-                    <div class="card h-100 border border-success text-center" style="background-color:#5812093b;">
-                        <div class="card-body"><h4>PARTIDA ACTUAL:</h4>
-                            <p class="card-text fs-5">Nombre: <h5><div id="user1"></div></h5></p>
-                            <p class="card-text fs-5">Nivel:<div id="levelpicked"></div></p>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col mt-3"> 
-                        <div class="card h-100  border border-success text-center" style="background-color:#5812093b;">
+            <!-- ABOUT GAME -->
+            <div class="container mt-2">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 d-flex justify-content-center">
+                    <div class="col mt-3">
+                        <div class="card h-100 border border-success text-center" style="background-color:#5812093b;">
                             <div class="card-body">
-                                <h4>SOBRE MASTERMIND:</h4>
-                                    <p class="card-text fs-5">Mastermind es un juego de lógica, 
-                                    este juego puede considerarse educativo ya que ayuda a desarrollar ciertas destrezas en el área lógico matemática.
+                                <h4>PARTIDA ACTUAL:</h4>
+                                <p class="card-text fs-5">Nombre:
+                                <h5>
+                                    <div id="user1"></div>
+                                </h5>
+                                </p>
+                                <p class="card-text fs-5">Nivel:
+                                <div id="levelpicked"></div>
                                 </p>
                             </div>
                         </div>
-                    </div>      
+                    </div>
+                    <div class="col mt-3">
+                        <div class="card h-100  border border-success text-center" style="background-color:#5812093b;">
+                            <div class="card-body">
+                                <h4>SOBRE MASTERMIND:</h4>
+                                <p class="card-text fs-5">Mastermind es un juego de lógica,
+                                    este juego puede considerarse educativo ya que ayuda a desarrollar ciertas destrezas
+                                    en el área lógico matemática.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="../js/user.js"></script>
     <script src="../js/about.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
