@@ -1,15 +1,18 @@
 .head {
-    height:7em;
-}
-.top{
     height: 7em;
 }
-.container1{
+
+.top {
+    height: 7em;
+}
+
+.container1 {
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgba(108, 108, 223, 0.274);
 }
-.pic{
+
+.pic {
     height: 12em;
     width: 50em;
     display: flex;
@@ -17,14 +20,17 @@
     align-items: center;
     background-color: rgb(103, 30, 10);
     border-radius: 50em 50em 50em 50em;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -1.4375em 1.5625em 0 inset, rgba(0, 0, 0, 0.15) 0 -2.25em 1.875em 0 inset, rgba(0, 0, 0, 0.1) 0 -4.9375em 2.5em 0 inset, rgba(0, 0, 0, 0.06) 0 0.125em 0.0625em, rgba(0, 0, 0, 0.09) 0 0.25em 0.125em, rgba(0, 0, 0, 0.09) 0 0.5em 0.25em, rgba(0, 0, 0, 0.09) 0 1em 0.5em, rgba(0, 0, 0, 0.09) 0 2em 1em;
 }
-.shadowCard{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+.shadowCard {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1.1875em 2.375em, rgba(0, 0, 0, 0.22) 0 0.9375em 0.75em;
 }
-.playButton{
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+
+.playButton {
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0.125em 0.25em, rgba(0, 0, 0, 0.3) 0 0.4375em 0.8125em -0.1875em, rgba(0, 0, 0, 0.2) 0 -0.1875em 0 inset;
+}
 
 .playButton:hover {
-    box-shadow: none; /* Elimina la sombra al pasar el cursor */
+    box-shadow: none;
 }

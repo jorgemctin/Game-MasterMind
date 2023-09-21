@@ -1,23 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.container1{
+
+.container1 {
     min-height: 100vh;
     background-color: rgba(108, 108, 223, 0.274);
 }
-.topcolor{
+
+.topcolor {
     height: 8em;
 }
-.bordercolor1{
-    /* width: 20em; */
+
+.bordercolor1 {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(135, 45, 137, 0.875);
     border-radius: 2em;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -1.4375em 1.5625em 0 inset, rgba(0, 0, 0, 0.15) 0 -2.25em 1.875em 0 inset, rgba(0, 0, 0, 0.1) 0 -4.9375em 2.5em 0 inset, rgba(0, 0, 0, 0.06) 0 0.125em 0.0625em, rgba(0, 0, 0, 0.09) 0 0.25em 0.125em, rgba(0, 0, 0, 0.09) 0 0.5em 0.25em, rgba(0, 0, 0, 0.09) 0 1em 0.5em, rgba(0, 0, 0, 0.09) 0 2em 1em;
 }
+
 .colorpicker {
     display: inline-block;
     height: 1.6em;
@@ -25,8 +28,8 @@
     margin: 1em;
     cursor: pointer;
 }
-.colorSelected {
 
+.colorSelected {
     display: inline-block;
     background-color: rgb(20, 20, 20);
     height: 1.6em;
@@ -34,6 +37,7 @@
     margin: 1em;
     cursor: pointer;
 }
-.shadowCard{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+.shadowCard {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1.1875em 2.375em, rgba(0, 0, 0, 0.22) 0 0.9375em 0.75em;
 }
