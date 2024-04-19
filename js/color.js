@@ -1,38 +1,23 @@
 
 //DEPENDS OF THE LEVEL SELECTED, SHOW 4,5 or 6 INPUT COLORs
 const selectingColors = () => {
-  const container = document.querySelector('.bordercolor1');
-  container.innerHTML = ''; 
+  const amountColorsString = localStorage.getItem("selectLevelColors");
+  const amountColors = parseInt(amountColorsString);
 
-  const level = localStorage.getItem("selectLevel");
+  const colorPickers = document.querySelectorAll('.colorPicker');
 
-  let amountColors;
-  if (level === 'beginner') {
-    amountColors = 4;
-  } else if (level === 'intermediate') {
-    amountColors = 5;
-  } else if (level === 'advanced') {
-    amountColors = 6;
-  } else {
-    amountColors = 4;
-  }
-
-  for (let i = 0; i < amountColors; i++) {
-    const colorpickerDiv = document.createElement('div');
-    colorpickerDiv.classList.add('colorpicker');
-
-    const input = document.createElement('input');
-    input.type = 'color';
-    input.id = i;
-
-    colorpickerDiv.appendChild(input);
-    container.appendChild(colorpickerDiv);
-  }
+  colorPickers.forEach((picker, i) => {
+    if (i < amountColors) {
+      picker.style.display = 'block'; 
+    } else {
+      picker.style.display = 'none'; 
+    }
+  });
 };
+
 selectingColors();
 
 //SENDING COLORS TO THE LOCAL STORAGE
-
 const storeColors = () => {
   const selectedColors = [];
   colorInputs.forEach(input => {
